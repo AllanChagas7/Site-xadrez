@@ -1,6 +1,6 @@
 /* ================= Base do Site ================= */
 body {
-    background-color: #6c8767; /* Fundo preto que você escolheu */
+    background-color: #2b383d; /* Fundo preto que você escolheu */
     color: #FCF2E5; /* Laranja para o texto padrão */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
@@ -12,20 +12,20 @@ header {
     padding: 20px;
 }
 
+/* Classes para destacar textos no meio dos parágrafos */
+.texto-claro {
+    color: #f6f8f7;
+    text-align: center;
+}
+
 header img {
     height: 200px;
 }
 
 /* ================= Tipografia e Cores ================= */
-.h1, h2, h3 {
+.h1, h2, h3, p{
     color: #d6cbbc; /* Magenta */
-    justify-content: center;
-
-}
-
-/* Classes para destacar textos no meio dos parágrafos */
-.texto-claro {
-    color: #f6f8f7;
+    text-align: center;
 }
 
 .destaque-ouro {
@@ -110,7 +110,7 @@ header img {
     display: inline-block;
     color: #f6f8f7;
     background-color: #b03493;
-    border: 2px solid #ed0b65;
+    border: 2px solid #cf0053;
     border-radius: 5px;
     padding: 10px 20px;
     text-decoration: none;
