@@ -1,10 +1,18 @@
 /* ================= Base do Site ================= */
 body {
-    background-color: #2b383d; /* Fundo preto que você escolheu */
+    /* Troque este caminho pela imagem de fundo que você quiser usar. */
+    background-color: #2b383d;
+    background-image: linear-gradient(rgba(43, 56, 61, 0.72), rgba(43, 56, 61, 0.72)), url('../assets/Tabuleirosemfundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
     color: #FCF2E5; /* Laranja para o texto padrão */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
     line-height: 1.6;
+    justify-content: center;
 }
 
 header {
@@ -24,7 +32,7 @@ header img {
 
 /* ================= Tipografia e Cores ================= */
 .h1, h2, h3, p{
-    color: #d6cbbc; /* Magenta */
+    color: #f6f8f7; /* Magenta */
     text-align: center;
 }
 
