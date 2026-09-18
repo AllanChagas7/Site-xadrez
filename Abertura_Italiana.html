@@ -1,29 +1,2054 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <link rel="icon" type="image/x-icon" href="./assets/Youtube_Assets-removebg-preview.ico">
-    <link rel="stylesheet" href="./style.css/xadrez.css">
-    <title>Aberturas de Xadrez</title>
+
+    <title>Abertura Italiana | Allanhq</title>
+
+
+    <style>
+
+        /* ================= BASE DO SITE ================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            background-color: #2b383d;
+
+            background-image:
+                linear-gradient(
+                    rgba(43, 56, 61, 0.72),
+                    rgba(43, 56, 61, 0.72)
+                ),
+                url('../assets/Tabuleirosemfundo.png');
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            min-height: 100vh;
+
+            color: #FCF2E5;
+
+            font-family:
+                'Trebuchet MS',
+                'Lucida Sans Unicode',
+                'Lucida Grande',
+                'Lucida Sans',
+                Arial,
+                sans-serif;
+
+            font-size: 20px;
+            line-height: 1.6;
+
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* ================= CABEÇALHO ================= */
+
+        header {
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+        header h1 {
+
+            color: #f6f8f7;
+
+            font-size: 42px;
+
+            margin: 10px 0;
+        }
+
+        header p {
+
+            color: #f6f8f7;
+
+            max-width: 800px;
+
+            margin: 0 auto;
+        }
+
+
+        /* ================= TIPOGRAFIA ================= */
+
+        h1,
+        h2,
+        h3,
+        p {
+
+            color: #f6f8f7;
+
+            text-align: center;
+        }
+
+        h2 {
+
+            color: #f1c15d;
+
+            margin-top: 40px;
+        }
+
+        h3 {
+
+            color: #f1c15d;
+        }
+
+        .texto-claro {
+
+            color: #f6f8f7;
+
+            text-align: center;
+        }
+
+        .destaque-ouro {
+
+            color: #f1c15d;
+
+            font-weight: bold;
+        }
+
+        .destaque-claro {
+
+            color: white;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= CONTEÚDO ================= */
+
+        .conteudo-abertura {
+
+            width: min(1100px, 92%);
+
+            margin: 0 auto;
+
+            padding: 20px;
+        }
+
+
+        /* ================= BOTÃO VOLTAR ================= */
+
+        .btn-voltar {
+
+            display: inline-block;
+
+            color: #f6f8f7;
+
+            background-color: #b03493;
+
+            border: 2px solid #cf0053;
+
+            border-radius: 5px;
+
+            padding: 10px 20px;
+
+            text-decoration: none;
+
+            margin: 20px;
+
+            font-weight: bold;
+
+            transition: 0.3s ease;
+        }
+
+        .btn-voltar:hover {
+
+            background-color: #ed0b65;
+
+            transform: scale(1.05);
+        }
+
+
+        /* ================= INTRODUÇÃO ================= */
+
+        .introducao-italiana {
+
+            background-color:
+                rgba(20, 30, 34, 0.85);
+
+            border: 2px solid #b03493;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            margin: 20px auto 40px;
+
+            max-width: 900px;
+
+            box-shadow:
+                0 0 20px rgba(176, 52, 147, 0.25);
+        }
+
+        .introducao-italiana p {
+
+            text-align: justify;
+
+            margin: 15px 0;
+        }
+
+
+        /* ================= CAIXA DE INFORMAÇÃO ================= */
+
+        .caixa-informacao {
+
+            background-color:
+                rgba(50, 94, 42, 0.85);
+
+            border: 2px solid #0be25e;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            margin: 30px auto;
+
+            max-width: 800px;
+        }
+
+        .caixa-informacao h3 {
+
+            margin-top: 0;
+        }
+
+        .caixa-informacao ul {
+
+            color: white;
+
+            padding-left: 30px;
+        }
+
+        .caixa-informacao li {
+
+            margin: 8px 0;
+        }
+
+
+        /* ================= PASSOS ================= */
+
+        .passos-italiana {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 30px;
+
+            margin-top: 30px;
+        }
+
+
+        /* ================= CARD DO PASSO ================= */
+
+        .passo-italiana {
+
+            background-color:
+                rgba(20, 30, 34, 0.90);
+
+            border: 2px solid #b03493;
+
+            border-radius: 12px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 0 15px rgba(176, 52, 147, 0.20);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .passo-italiana:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 0 25px rgba(247, 238, 66, 0.25);
+        }
+
+
+        /* ================= NÚMERO DO PASSO ================= */
+
+        .numero-passo {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 45px;
+
+            height: 45px;
+
+            margin: 0 auto 15px;
+
+            border-radius: 50%;
+
+            background-color: #325e2a;
+
+            border: 2px solid #0be25e;
+
+            color: white;
+
+            font-size: 22px;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= TEXTO DOS PASSOS ================= */
+
+        .passo-italiana p {
+
+            text-align: justify;
+
+            font-size: 17px;
+
+            color: #f6f8f7;
+        }
+
+
+        /* ================= MOVIMENTO ================= */
+
+        .movimento {
+
+            display: block;
+
+            background-color: #325e2a;
+
+            border: 2px solid #0be25e;
+
+            color: #f1c15d;
+
+            text-align: center;
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            padding: 8px;
+
+            border-radius: 8px;
+
+            margin-top: 20px;
+        }
+
+
+        /* ================= ÁREA DO TABULEIRO ================= */
+
+        .area-tabuleiro {
+
+            border: 2px dashed #b03493;
+
+            padding: 20px;
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            border-radius: 10px;
+
+            background-color:
+                rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* ================= TABULEIRO ================= */
+
+        .tabuleiro {
+
+            width: 100%;
+
+            max-width: 420px;
+
+            aspect-ratio: 1 / 1;
+
+            margin: 20px auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(8, 1fr);
+
+            border: 5px solid #151515;
+
+            border-radius: 3px;
+
+            overflow: hidden;
+        }
+
+
+        .casa {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            aspect-ratio: 1 / 1;
+
+            font-size:
+                clamp(20px, 5vw, 38px);
+
+            line-height: 1;
+        }
+
+        .clara {
+
+            background-color: #f0d9b5;
+        }
+
+        .escura {
+
+            background-color: #b58863;
+        }
+
+        .branca {
+
+            color: #ffffff;
+
+            text-shadow:
+                1px 1px 2px #000,
+                -1px -1px 2px #000;
+        }
+
+        .preta {
+
+            color: #111111;
+
+            text-shadow:
+                1px 1px 1px #777;
+        }
+
+
+        /* ================= IDEIAS PRINCIPAIS ================= */
+
+        .ideias-principais {
+
+            background-color:
+                rgba(50, 94, 42, 0.85);
+
+            border: 2px solid #0be25e;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            margin: 50px auto;
+
+            max-width: 900px;
+        }
+
+        .ideias-principais h2 {
+
+            margin-top: 0;
+        }
+
+        .ideia {
+
+            margin: 25px 0;
+
+            padding: 15px;
+
+            border-left:
+                4px solid #f1c15d;
+
+            background-color:
+                rgba(0, 0, 0, 0.15);
+        }
+
+        .ideia h3 {
+
+            text-align: left;
+
+            margin-top: 0;
+        }
+
+        .ideia p {
+
+            text-align: justify;
+
+            margin-bottom: 0;
+        }
+
+
+        /* ================= RESUMO ================= */
+
+        .resumo-italiana {
+
+            background-color:
+                rgba(20, 30, 34, 0.90);
+
+            border: 2px solid #f1c15d;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            margin: 50px auto;
+
+            max-width: 900px;
+        }
+
+        .resumo-italiana h2 {
+
+            margin-top: 0;
+        }
+
+        .resumo-italiana p {
+
+            text-align: justify;
+        }
+
+        .frase-final {
+
+            color: #f1c15d;
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            text-align: center;
+
+            margin-top: 25px;
+        }
+
+
+        /* ================= RODAPÉ ================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            margin-top: 50px;
+
+            background-color:
+                rgba(15, 20, 22, 0.90);
+
+            border-top:
+                2px solid #b03493;
+        }
+
+        footer p {
+
+            margin: 0;
+        }
+
+
+        /* ================= RESPONSIVIDADE ================= */
+
+        @media (max-width: 900px) {
+
+            body {
+
+                background-attachment: scroll;
+
+                font-size: 18px;
+            }
+
+            header h1 {
+
+                font-size: 35px;
+            }
+
+            .passos-italiana {
+
+                grid-template-columns: 1fr;
+            }
+
+            .conteudo-abertura {
+
+                width: 94%;
+
+                padding: 10px;
+            }
+        }
+
+
+        /* ================= CELULAR ================= */
+
+        @media (max-width: 600px) {
+
+            body {
+
+                font-size: 16px;
+
+                background-image:
+                    linear-gradient(
+                        rgba(43, 56, 61, 0.82),
+                        rgba(43, 56, 61, 0.82)
+                    ),
+                    url('../assets/Tabuleirosemfundo.png');
+            }
+
+            header {
+
+                padding: 15px 10px;
+            }
+
+            header h1 {
+
+                font-size: 28px;
+
+                line-height: 1.2;
+            }
+
+            header p {
+
+                font-size: 16px;
+            }
+
+            h2 {
+
+                font-size: 25px;
+            }
+
+            h3 {
+
+                font-size: 20px;
+            }
+
+            .conteudo-abertura {
+
+                width: 100%;
+
+                padding: 10px;
+            }
+
+            .btn-voltar {
+
+                display: block;
+
+                width: fit-content;
+
+                margin: 15px auto;
+            }
+
+            .introducao-italiana {
+
+                padding: 18px;
+
+                margin-top: 20px;
+            }
+
+            .introducao-italiana p {
+
+                text-align: left;
+
+                font-size: 16px;
+            }
+
+            .caixa-informacao {
+
+                padding: 18px;
+            }
+
+            .caixa-informacao ul {
+
+                padding-left: 20px;
+            }
+
+            .passos-italiana {
+
+                display: flex;
+
+                flex-direction: column;
+
+                gap: 20px;
+            }
+
+            .passo-italiana {
+
+                padding: 18px;
+            }
+
+            .passo-italiana p {
+
+                text-align: left;
+
+                font-size: 16px;
+            }
+
+            .tabuleiro {
+
+                max-width: 330px;
+
+                border-width: 3px;
+            }
+
+            .casa {
+
+                font-size: 27px;
+            }
+
+            .movimento {
+
+                font-size: 20px;
+            }
+
+            .ideias-principais,
+            .resumo-italiana {
+
+                padding: 20px;
+
+                margin: 30px auto;
+            }
+
+            .ideia p,
+            .resumo-italiana p {
+
+                text-align: left;
+
+                font-size: 16px;
+            }
+
+            .frase-final {
+
+                font-size: 20px;
+            }
+
+            footer {
+
+                padding: 20px 10px;
+            }
+        }
+
+
+        /* ================= CELULARES PEQUENOS ================= */
+
+        @media (max-width: 380px) {
+
+            header h1 {
+
+                font-size: 24px;
+            }
+
+            .tabuleiro {
+
+                max-width: 280px;
+            }
+
+            .casa {
+
+                font-size: 22px;
+            }
+
+            .passo-italiana {
+
+                padding: 14px;
+            }
+
+            .movimento {
+
+                font-size: 18px;
+            }
+        }
+
+    </style>
+
 </head>
+
+
 <body>
-    
+
+
+    <!-- ================= CABEÇALHO ================= -->
+
     <header>
-        <section class="cabecalho">
-            <img src="./assets/Abertura italiana.png" alt="Tabuleiro de xadrez">
-            <h1>ABERTURA ITALIANA</h1>
-            <p class="texto-claro">LKHJOIUHIBUYVGCUYGYHGUIUIVUUIGUUYUYFUGUUI</p>
-        </section>
+
+        <h1>
+            ♗ Abertura Italiana
+        </h1>
+
+        <h2>
+            Aprenda uma das aberturas clássicas do xadrez
+            passo a passo.
+        </h2>
+
     </header>
-    
-    <main>
-        
-        <!-- Grade de Botões de Imagens -->
-        <section class="grid-aberturas">
+
+
+    <!-- ================= CONTEÚDO ================= -->
+
+    <main class="conteudo-abertura">
+
+
+        <!-- BOTÃO VOLTAR -->
+
+        <a href="index.html" class="btn-voltar">
+            ← Voltar
+        </a>
+
+
+        <!-- ================= INTRODUÇÃO ================= -->
+
+        <section class="introducao-italiana">
+
+            <h2>
+                O que é a Abertura Italiana?
+            </h2>
+
+            <h2>
+                A <span class="destaque-ouro">
+                    Abertura Italiana
+                </span>
+                é uma abertura clássica do xadrez que começa
+                com o desenvolvimento rápido das peças e a disputa
+                pelo centro.
+            </h2>
+
+            <h2>
+                Ela começa normalmente com
+                <strong>1. e4 e5 2. Nf3 Nc6 3. Bc4</strong>.
+            </h2>
+
+            <h2>
+                O bispo branco é desenvolvido para c4,
+                colocando pressão sobre o peão de f7,
+                que é uma das casas mais vulneráveis da posição inicial.
+            </h2>
+
+            <h2>
+                As brancas procuram desenvolver suas peças rapidamente,
+                preparar o roque e controlar o centro do tabuleiro.
+            </h2>
+
+
+            <!-- CAIXA DE INFORMAÇÃO -->
+
+            <div class="caixa-informacao">
+
+                <h3>
+                    🎯 Principais características
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Desenvolvimento rápido das peças.
+                    </li>
+
+                    <li>
+                        Forte controle do centro.
+                    </li>
+
+                    <li>
+                        Pressão sobre o ponto f7.
+                    </li>
+
+                    <li>
+                        Preparação rápida para o roque.
+                    </li>
+
+                    <li>
+                        Possibilidade de ataques e jogo estratégico.
+                    </li>
+
+                </ul>
+
+            </div>
+
         </section>
+
+
+        <!-- ================= PASSO A PASSO ================= -->
+
+        <h2>
+            ♟ Passo a passo da Abertura Italiana
+        </h2>
+
+
+        <section class="passos-italiana">
+
+
+            <!-- =====================================================
+                 PASSO 1
+            ====================================================== -->
+
+            <article class="passo-italiana">
+
+                <div class="numero-passo">
+                    1
+                </div>
+
+                <h3>
+                    As brancas jogam 1. e4
+                </h3>
+
+                <h2>
+                    As brancas avançam o peão do rei duas casas,
+                    ocupando uma importante região central.
+                </h2>
+
+                <h2>
+                    Esse movimento também libera a diagonal
+                    para o bispo de f1 e a dama.
+                </h2>
+
+
+                <!-- TABULEIRO -->
+
+                <div class="area-tabuleiro">
+
+                    <p class="destaque-ouro">
+                        Posição após 1. e4
+                    </p>
+
+                    <div class="tabuleiro">
+
+
+                        <!-- 8 -->
+
+                        <div class="casa escura preta">♜</div>
+                        <div class="casa clara preta">♞</div>
+                        <div class="casa escura preta">♝</div>
+                        <div class="casa clara preta">♛</div>
+                        <div class="casa escura preta">♚</div>
+                        <div class="casa clara preta">♝</div>
+                        <div class="casa escura preta">♞</div>
+                        <div class="casa clara preta">♜</div>
+
+
+                        <!-- 7 -->
+
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+
+
+                        <!-- 6 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 5 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 4 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara branca">
+                            ♙
+                        </div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 3 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 2 -->
+
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+
+
+                        <!-- 1 -->
+
+                        <div class="casa clara branca">♖</div>
+                        <div class="casa escura branca">♘</div>
+                        <div class="casa clara branca">♗</div>
+                        <div class="casa escura branca">♕</div>
+                        <div class="casa clara branca">♔</div>
+                        <div class="casa escura branca">♗</div>
+                        <div class="casa clara branca">♘</div>
+                        <div class="casa escura branca">♖</div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="movimento">
+                    1. e4
+                </span>
+
+            </article>
+
+
+            <!-- =====================================================
+                 PASSO 2
+            ====================================================== -->
+
+            <article class="passo-italiana">
+
+                <div class="numero-passo">
+                    2
+                </div>
+
+                <h3>
+                    As pretas respondem 1... e5
+                </h3>
+
+                <h2>
+                    As pretas respondem ocupando o centro com
+                    o peão do rei.
+                </h2>
+
+                <h2>
+                    Agora os dois jogadores possuem peões centrais
+                    em e4 e e5.
+                </h2>
+
+
+                <!-- TABULEIRO -->
+
+                <div class="area-tabuleiro">
+
+                    <h2 class="destaque-ouro">
+                        Posição após 1... e5
+                    </h2>
+
+                    <div class="tabuleiro">
+
+
+                        <!-- 8 -->
+
+                        <div class="casa escura preta">♜</div>
+                        <div class="casa clara preta">♞</div>
+                        <div class="casa escura preta">♝</div>
+                        <div class="casa clara preta">♛</div>
+                        <div class="casa escura preta">♚</div>
+                        <div class="casa clara preta">♝</div>
+                        <div class="casa escura preta">♞</div>
+                        <div class="casa clara preta">♜</div>
+
+
+                        <!-- 7 -->
+
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+
+
+                        <!-- 6 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 5 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">
+                            ♟
+                        </div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 4 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara branca">
+                            ♙
+                        </div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 3 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 2 -->
+
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+
+
+                        <!-- 1 -->
+
+                        <div class="casa clara branca">♖</div>
+                        <div class="casa escura branca">♘</div>
+                        <div class="casa clara branca">♗</div>
+                        <div class="casa escura branca">♕</div>
+                        <div class="casa clara branca">♔</div>
+                        <div class="casa escura branca">♗</div>
+                        <div class="casa clara branca">♘</div>
+                        <div class="casa escura branca">♖</div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="movimento">
+                    1... e5
+                </span>
+
+            </article>
+
+
+            <!-- =====================================================
+                 PASSO 3
+            ====================================================== -->
+
+            <article class="passo-italiana">
+
+                <div class="numero-passo">
+                    3
+                </div>
+
+                <h3>
+                    As brancas jogam 2. Nf3
+                </h3>
+
+                <h2>
+                    O cavalo branco de g1 vai para f3.
+                </h2>
+
+                <h2>
+                    O cavalo passa a controlar casas importantes
+                    do centro e também ataca o peão preto de e5.
+                </h2>
+
+
+                <!-- TABULEIRO -->
+
+                <div class="area-tabuleiro">
+
+                    <h2 class="destaque-ouro">
+                        Posição após 2. Nf3
+                    </h2>
+
+                    <div class="tabuleiro">
+
+
+                        <!-- 8 -->
+
+                        <div class="casa escura preta">♜</div>
+                        <div class="casa clara preta">♞</div>
+                        <div class="casa escura preta">♝</div>
+                        <div class="casa clara preta">♛</div>
+                        <div class="casa escura preta">♚</div>
+                        <div class="casa clara preta">♝</div>
+                        <div class="casa escura preta">♞</div>
+                        <div class="casa clara preta">♜</div>
+
+
+                        <!-- 7 -->
+
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+
+
+                        <!-- 6 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 5 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 4 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 3 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+                        <div class="casa escura branca">
+                            ♘
+                        </div>
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 2 -->
+
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+
+
+                        <!-- 1 -->
+
+                        <div class="casa clara branca">♖</div>
+                        <div class="casa escura white">♘</div>
+                        <div class="casa clara branca">♗</div>
+                        <div class="casa escura branca">♕</div>
+                        <div class="casa clara branca">♔</div>
+                        <div class="casa escura branca">♗</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♖</div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="movimento">
+                    2. Nf3
+                </span>
+
+            </article>
+
+
+            <!-- =====================================================
+                 PASSO 4
+            ====================================================== -->
+
+            <article class="passo-italiana">
+
+                <div class="numero-passo">
+                    4
+                </div>
+
+                <h3>
+                    As pretas jogam 2... Nc6
+                </h3>
+
+                <h2>
+                    As pretas desenvolvem o cavalo de b8 para c6.
+                </h2>
+
+                <h2>
+                    O cavalo ajuda a controlar o centro e protege
+                    o peão de e5.
+                </h2>
+
+
+                <!-- TABULEIRO -->
+
+                <div class="area-tabuleiro">
+
+                    <h2 class="destaque-ouro">
+                        Posição após 2... Nc6
+                    </h2>
+
+                    <div class="tabuleiro">
+
+
+                        <!-- 8 -->
+
+                        <div class="casa escura preta">♜</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♝</div>
+                        <div class="casa clara preta">♛</div>
+                        <div class="casa escura preta">♚</div>
+                        <div class="casa clara preta">♝</div>
+                        <div class="casa escura preta">♞</div>
+                        <div class="casa clara preta">♜</div>
+
+
+                        <!-- 7 -->
+
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+
+
+                        <!-- 6 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+                        <div class="casa escura preta">
+                            ♞
+                        </div>
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 5 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 4 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 3 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♘</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 2 -->
+
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+
+
+                        <!-- 1 -->
+
+                        <div class="casa clara branca">♖</div>
+                        <div class="casa escura branca">♘</div>
+                        <div class="casa clara branca">♗</div>
+                        <div class="casa escura branca">♕</div>
+                        <div class="casa clara branca">♔</div>
+                        <div class="casa escura branca">♗</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♖</div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="movimento">
+                    2... Nc6
+                </span>
+
+            </article>
+
+
+            <!-- =====================================================
+                 PASSO 5
+            ====================================================== -->
+
+            <article class="passo-italiana">
+
+                <div class="numero-passo">
+                    5
+                </div>
+
+                <h3>
+                    As brancas jogam 3. Bc4
+                </h3>
+
+                <h2>
+                    Agora o bispo branco sai de f1 e vai para c4.
+                </h2>
+
+                <h2>
+                    Esse é o movimento que caracteriza a Abertura
+                    Italiana. O bispo passa a mirar a casa f7,
+                    próxima ao rei preto.
+                </h2>
+
+
+                <!-- TABULEIRO -->
+
+                <div class="area-tabuleiro">
+
+                    <h2 class="destaque-ouro">
+                        Posição após 3. Bc4
+                    </h2>
+
+                    <div class="tabuleiro">
+
+
+                        <!-- 8 -->
+
+                        <div class="casa escura preta">♜</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♝</div>
+                        <div class="casa clara preta">♛</div>
+                        <div class="casa escura preta">♚</div>
+                        <div class="casa clara preta">♝</div>
+                        <div class="casa escura preta">♞</div>
+                        <div class="casa clara preta">♜</div>
+
+
+                        <!-- 7 -->
+
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+
+
+                        <!-- 6 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♞</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 5 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 4 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara branca">♙</div>
+
+                        <div class="casa escura"></div>
+
+                        <div class="casa clara branca">
+                            ♗
+                        </div>
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 3 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♘</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 2 -->
+
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+
+
+                        <!-- 1 -->
+
+                        <div class="casa clara branca">♖</div>
+                        <div class="casa escura branca">♘</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♕</div>
+                        <div class="casa clara branca">♔</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♖</div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="movimento">
+                    3. Bc4
+                </span>
+
+            </article>
+
+
+            <!-- =====================================================
+                 PASSO 6
+            ====================================================== -->
+
+            <article class="passo-italiana">
+
+                <div class="numero-passo">
+                    6
+                </div>
+
+                <h3>
+                    As pretas jogam 3... Bc5
+                </h3>
+
+                <h2>
+                    As pretas desenvolvem o bispo de f8 para c5.
+                </h2>
+
+                <h2>
+                    O bispo preto também passa a controlar uma diagonal
+                    importante e aponta para a região do rei branco.
+                </h2>
+
+
+                <!-- TABULEIRO -->
+
+                <div class="area-tabuleiro">
+
+                    <h2 class="destaque-ouro">
+                        Posição após 3... Bc5
+                    </h2>
+
+                    <div class="tabuleiro">
+
+
+                        <!-- 8 -->
+
+                        <div class="casa escura preta">♜</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♝</div>
+                        <div class="casa clara preta">♛</div>
+                        <div class="casa escura preta">♚</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♞</div>
+                        <div class="casa clara preta">♜</div>
+
+
+                        <!-- 7 -->
+
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+
+
+                        <!-- 6 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♞</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 5 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 4 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara branca">♗</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 3 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♘</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 2 -->
+
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+
+
+                        <!-- 1 -->
+
+                        <div class="casa clara branca">♖</div>
+                        <div class="casa escura branca">♘</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♕</div>
+                        <div class="casa clara branca">♔</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♖</div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="movimento">
+                    3... Bc5
+                </span>
+
+            </article>
+
+
+            <!-- =====================================================
+                 PASSO 7
+            ====================================================== -->
+
+            <article class="passo-italiana">
+
+                <div class="numero-passo">
+                    7
+                </div>
+
+                <h3>
+                    As brancas fazem o roque
+                </h3>
+
+                <h2>
+                    Depois de desenvolver as peças, as brancas podem
+                    proteger o rei fazendo o roque pequeno.
+                </h2>
+
+                <h2>
+                    O rei vai para g1 e a torre de h1 vai para f1.
+                    Com isso, o rei fica mais protegido e a torre
+                    entra no jogo.
+                </h2>
+
+
+                <!-- TABULEIRO -->
+
+                <div class="area-tabuleiro">
+
+                    <h2 class="destaque-ouro">
+                        Posição após 4. O-O
+                    </h2>
+
+                    <div class="tabuleiro">
+
+
+                        <!-- 8 -->
+
+                        <div class="casa escura preta">♜</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♝</div>
+                        <div class="casa clara preta">♛</div>
+                        <div class="casa escura preta">♚</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♞</div>
+                        <div class="casa clara preta">♜</div>
+
+
+                        <!-- 7 -->
+
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara preta">♟</div>
+                        <div class="casa escura preta">♟</div>
+
+
+                        <!-- 6 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♞</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 5 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura preta">♟</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 4 -->
+
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara branca">♗</div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+
+
+                        <!-- 3 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♘</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+
+                        <!-- 2 -->
+
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+                        <div class="casa escura branca">♙</div>
+                        <div class="casa clara branca">♙</div>
+
+
+                        <!-- 1 -->
+
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+                        <div class="casa clara"></div>
+                        <div class="casa escura"></div>
+
+                        <!-- Torre em f1 -->
+                        <div class="casa clara branca">
+                            ♖
+                        </div>
+
+                        <!-- Rei em g1 -->
+                        <div class="casa escura branca">
+                            ♔
+                        </div>
+
+                        <div class="casa clara"></div>
+
+                        <div class="casa escura branca">
+                            ♖
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="movimento">
+                    4. O-O
+                </span>
+
+            </article>
+
+        </section>
+
+
+        <!-- ================= IDEIAS PRINCIPAIS ================= -->
+
+        <section class="ideias-principais">
+
+            <h2>
+                ♟ Ideias principais da Abertura Italiana
+            </h2>
+
+
+            <div class="ideia">
+
+                <h3>
+                    🎯 Controle do centro
+                </h3>
+
+                <h2>
+                    O movimento e4 permite às brancas disputar
+                    diretamente o centro do tabuleiro.
+                </h2>
+
+            </div>
+
+
+            <div class="ideia">
+
+                <h3>
+                    ♗ Desenvolvimento das peças
+                </h3>
+
+                <h2>
+                    Cavalos e bispos são desenvolvidos rapidamente
+                    para colocar as peças em posições ativas.
+                </h2>
+
+            </div>
+
+
+            <div class="ideia">
+
+                <h3>
+                    ⚔️ Pressão sobre f7
+                </h3>
+
+                <h2>
+                    O bispo em c4 aponta para f7, uma casa que fica
+                    próxima ao rei preto e pode ser um alvo tático.
+                </h2>
+
+            </div>
+
+
+            <div class="ideia">
+
+                <h3>
+                    👑 Segurança do rei
+                </h3>
+
+                <h2>
+                    O roque permite que as brancas retirem o rei
+                    do centro e coloquem a torre de h1 em f1.
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESUMO ================= -->
+
+        <section class="resumo-italiana">
+
+            <h2>
+                🏆 Em resumo
+            </h2>
+
+            <h2>
+                Uma sequência clássica da Abertura Italiana é:
+            </h2>
+
+            <h2 class="destaque-ouro">
+
+                1. e4 e5
+                <br>
+                2. Nf3 Nc6
+                <br>
+                3. Bc4 Bc5
+                <br>
+                4. O-O
+
+            </h2>
+
+            <h2>
+                A ideia geral é desenvolver as peças rapidamente,
+                controlar o centro, colocar pressão sobre pontos
+                importantes da posição adversária e proteger o rei.
+            </h2>
+
+            <h2>
+                Depois dessas jogadas, existem diferentes planos
+                e variantes. Portanto, essa sequência serve como
+                uma introdução aos princípios da Abertura Italiana.
+            </h2>
+
+
+            <div class="frase-final">
+
+                <h2>
+                    Estude, pratique e evolua no xadrez! ♟
+                </h2>
+
+            </div>
+
+        </section>
+
+
     </main>
 
+
+    <!-- ================= RODAPÉ ================= -->
+
+    <footer>
+
+        <p>
+
+            Página de Xadrez —
+
+            <span class="destaque-ouro">
+                allanhq
+            </span>
+
+        </p>
+
+    </footer>
+
+
 </body>
+
 </html>
+```
